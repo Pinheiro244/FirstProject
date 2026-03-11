@@ -1,0 +1,6 @@
+# ninja log v6
+6	253	7949710832357946	build.ninja	43dd245b09665039
+6	253	7949710832357946	C:/Users/35196/CLionProjects/FirstProject/cmake-build-debug/cmake_install.cmake	43dd245b09665039
+40	139	7949710833842547	CMakeFiles/FirstProject.dir/sources/factorial.cpp.obj	d338843b1b0aa18e
+34	674	7949710833787200	CMakeFiles/FirstProject.dir/main.cpp.obj	5889676d92ad7bd
+675	833	7949710840195756	FirstProject.exe	daee093c77df37a5

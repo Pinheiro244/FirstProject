@@ -1,15 +1,19 @@
 #include <iostream>
 #include "factorial.h"
 #include "pl2.h"
+#include "pl3.h"
 
 
-int main() {
+using namespace std;
+
+
+void testarPL2() {
 
     int n=10;
     int r = factorial(n);
     std::cout<<"---->"<<r<<std::endl;
 
-    return 0;
+
 
 
 
@@ -123,6 +127,69 @@ int main() {
 
     std::cout << std::endl;
 
-
-    return 0;
 }
+
+
+
+void testarPL3() {
+
+    int n = 5;
+
+    int* arr = allocateArray(n);
+
+    fillRandom(arr, n);
+
+    cout << "Array: ";
+    printArray(arr, n);
+
+    cout << "Array invertido: ";
+    printReverse(arr, n);
+
+    cout << "Elemento na posicao 2: " << getElement(arr, 2) << endl;
+
+
+
+    int* arr1 = allocateArray(n);
+    int* arr2 = allocateArray(n);
+
+    fillRandom(arr1, n);
+
+    cout << "Array 1: ";
+    printArray(arr1, n);
+
+    sumArrays(arr, arr1, arr2, n);
+
+    cout << "Resultado da soma: ";
+    printArray(arr2, n);
+
+
+
+    freeArray(arr);
+    freeArray(arr1);
+    freeArray(arr2);
+
+
+
+    int rows = 3;
+    int cols = 3;
+
+    int** matrix = createMatrix(rows, cols);
+
+    fillMatrix(matrix, rows, cols);
+
+    cout << "Matriz:" << endl;
+    printMatrix(matrix, rows, cols);
+
+    freeMatrix(matrix, rows);
+
+
+}
+
+
+int main() {
+    testarPL2();
+    testarPL3();
+    return 0;
+
+}
+

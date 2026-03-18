@@ -65,6 +65,14 @@ build CMakeFiles/FirstProject.dir/sources/factorial.cpp.obj: CXX_COMPILER__First
   OBJECT_DIR = CMakeFiles\FirstProject.dir
   OBJECT_FILE_DIR = CMakeFiles\FirstProject.dir\sources
 
+build CMakeFiles/FirstProject.dir/sources/pl3.cpp.obj: CXX_COMPILER__FirstProject_unscanned_Debug C$:/Users/35196/CLionProjects/FirstProject/sources/pl3.cpp || cmake_object_order_depends_target_FirstProject
+  CONFIG = Debug
+  DEP_FILE = CMakeFiles\FirstProject.dir\sources\pl3.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/35196/CLionProjects/FirstProject/headers -IC:/Users/35196/CLionProjects/FirstProject/sources
+  OBJECT_DIR = CMakeFiles\FirstProject.dir
+  OBJECT_FILE_DIR = CMakeFiles\FirstProject.dir\sources
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target FirstProject
@@ -73,7 +81,7 @@ build CMakeFiles/FirstProject.dir/sources/factorial.cpp.obj: CXX_COMPILER__First
 #############################################
 # Link the executable FirstProject.exe
 
-build FirstProject.exe: CXX_EXECUTABLE_LINKER__FirstProject_Debug CMakeFiles/FirstProject.dir/main.cpp.obj CMakeFiles/FirstProject.dir/sources/factorial.cpp.obj
+build FirstProject.exe: CXX_EXECUTABLE_LINKER__FirstProject_Debug CMakeFiles/FirstProject.dir/main.cpp.obj CMakeFiles/FirstProject.dir/sources/factorial.cpp.obj CMakeFiles/FirstProject.dir/sources/pl3.cpp.obj
   CONFIG = Debug
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32

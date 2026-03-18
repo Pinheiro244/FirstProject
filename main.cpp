@@ -19,7 +19,7 @@ void testarPL2() {
 
     // -------- EVEN --------
 
-    int n = 10;
+    n = 10;
     bool r1 = isEven(n);
     std::cout << "isEven ----> " << r1 << std::endl;
 
@@ -55,7 +55,7 @@ void testarPL2() {
 
     int p = 9;
     int q = 2;
-    int r = 5;
+     r = 5;
 
     sort3(&p,&q,&r);
 

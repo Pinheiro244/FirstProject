@@ -32,9 +32,9 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/35196/CLionProjects/fsoft2026_1DE_3/Sources/service/TrainingPlanService.cpp" "CMakeFiles/fsoft2026_1DE_3.dir/Sources/service/TrainingPlanService.cpp.obj" "gcc" "CMakeFiles/fsoft2026_1DE_3.dir/Sources/service/TrainingPlanService.cpp.obj.d"
   "C:/Users/35196/CLionProjects/fsoft2026_1DE_3/Sources/view/MatriculaView.cpp" "CMakeFiles/fsoft2026_1DE_3.dir/Sources/view/MatriculaView.cpp.obj" "gcc" "CMakeFiles/fsoft2026_1DE_3.dir/Sources/view/MatriculaView.cpp.obj.d"
   "C:/Users/35196/CLionProjects/fsoft2026_1DE_3/Sources/view/StudentView.cpp" "CMakeFiles/fsoft2026_1DE_3.dir/Sources/view/StudentView.cpp.obj" "gcc" "CMakeFiles/fsoft2026_1DE_3.dir/Sources/view/StudentView.cpp.obj.d"
-  "C:/Users/35196/CLionProjects/fsoft2026_1DE_3/Sources/view/TrainingPlanView.cpp" "CMakeFiles/fsoft2026_1DE_3.dir/Sources/view/TrainingPlanView.cpp.obj" "gcc" "CMakeFiles/fsoft2026_1DE_3.dir/Sources/view/TrainingPlanView.cpp.obj.d"
-  "C:/Users/35196/CLionProjects/fsoft2026_1DE_3/Sources/view/Utils.cpp" "CMakeFiles/fsoft2026_1DE_3.dir/Sources/view/Utils.cpp.obj" "gcc" "CMakeFiles/fsoft2026_1DE_3.dir/Sources/view/Utils.cpp.obj.d"
-  "C:/Users/35196/CLionProjects/fsoft2026_1DE_3/Sources/view/View.cpp" "CMakeFiles/fsoft2026_1DE_3.dir/Sources/view/View.cpp.obj" "gcc" "CMakeFiles/fsoft2026_1DE_3.dir/Sources/view/View.cpp.obj.d"
+  "C:/Users/35196/CLionProjects/fsoft2026_1DE_3/Sources/view/trainingPlanView.cpp" "CMakeFiles/fsoft2026_1DE_3.dir/Sources/view/trainingPlanView.cpp.obj" "gcc" "CMakeFiles/fsoft2026_1DE_3.dir/Sources/view/trainingPlanView.cpp.obj.d"
+  "C:/Users/35196/CLionProjects/fsoft2026_1DE_3/Sources/view/utils.cpp" "CMakeFiles/fsoft2026_1DE_3.dir/Sources/view/utils.cpp.obj" "gcc" "CMakeFiles/fsoft2026_1DE_3.dir/Sources/view/utils.cpp.obj.d"
+  "C:/Users/35196/CLionProjects/fsoft2026_1DE_3/Sources/view/view.cpp" "CMakeFiles/fsoft2026_1DE_3.dir/Sources/view/view.cpp.obj" "gcc" "CMakeFiles/fsoft2026_1DE_3.dir/Sources/view/view.cpp.obj.d"
   "C:/Users/35196/CLionProjects/fsoft2026_1DE_3/main.cpp" "CMakeFiles/fsoft2026_1DE_3.dir/main.cpp.obj" "gcc" "CMakeFiles/fsoft2026_1DE_3.dir/main.cpp.obj.d"
   )
 

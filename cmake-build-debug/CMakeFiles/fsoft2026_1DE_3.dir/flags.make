@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = @CMakeFiles/fsoft2026_1DE_3.dir/includes_CXX.rsp
 
-CXX_FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
+CXX_FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
 

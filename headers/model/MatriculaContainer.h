@@ -2,22 +2,21 @@
 #define MATRICULACONTAINER_H
 
 #include <list>
+
 #include "Matricula.h"
+#include "student.h"
+#include "TrainingPlan.h"
 
 using namespace std;
 
 class MatriculaContainer {
-
 private:
     list<Matricula*> matriculas;
 
     Matricula* search(int id) const;
-
-    Matricula* search(int studentId, int trainingPlanId) const;
+    Matricula* search(Student *student, TrainingPlan *trainingPlan) const;
 
 public:
-    MatriculaContainer() = default;
-
     ~MatriculaContainer();
 
     void add(
@@ -30,16 +29,14 @@ public:
     );
 
     Matricula* get(int id) const;
-
-    Matricula* get(int studentId, int trainingPlanId) const;
+    Matricula* get(Student *student, TrainingPlan *trainingPlan) const;
 
     list<Matricula*> getAll() const;
 
-    list<Matricula*> getByStudent(int studentId) const;
+    list<Matricula*> getByStudent(Student *student) const;
+    list<Matricula*> getByTrainingPlan(TrainingPlan *trainingPlan) const;
 
-    list<Matricula*> getByTrainingPlan(int trainingPlanId) const;
-
-    Matricula* remove(int studentId, int trainingPlanId);
+    Matricula* remove(Student *student, TrainingPlan *trainingPlan);
 };
 
 #endif

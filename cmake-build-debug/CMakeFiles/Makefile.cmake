@@ -60,4 +60,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/fsoft2026_1DE_3.dir/DependInfo.cmake"
+  "CMakeFiles/ProjectTester.dir/DependInfo.cmake"
   )

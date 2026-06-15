@@ -9,13 +9,14 @@
 					"jsonFile" : "directory-.-debug-d0094a50bb2071803777.json",
 					"minimumCMakeVersion" : 
 					{
-						"string" : "3.16"
+						"string" : "3.20"
 					},
 					"projectIndex" : 0,
 					"source" : ".",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1
 					]
 				}
 			],
@@ -30,7 +31,8 @@
 					"name" : "fsoft2026_1DE_3",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1
 					]
 				}
 			],
@@ -38,8 +40,15 @@
 			[
 				{
 					"directoryIndex" : 0,
+					"id" : "ProjectTester::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ProjectTester-debug-22ca648afba86a4b6e0a.json",
+					"name" : "ProjectTester",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
 					"id" : "fsoft2026_1DE_3::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-fsoft2026_1DE_3-debug-da20fcae13d32260b0f7.json",
+					"jsonFile" : "target-fsoft2026_1DE_3-debug-511a49a6f943fcd31ee7.json",
 					"name" : "fsoft2026_1DE_3",
 					"projectIndex" : 0
 				}

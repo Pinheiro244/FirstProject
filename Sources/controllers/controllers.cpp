@@ -207,12 +207,11 @@ void Controller::runTrainingPlans() {
             }
                 break;
 
-            case 2: {
+        case 2: {
                 try {
-                    TrainingPlanOUTDTO trainingPlan;
-
                     int id = Utils::getNumber("Enter the Training Plan Id");
 
+                    TrainingPlanOUTDTO trainingPlan;
                     this->trainingPlanService->get(id, trainingPlan);
 
                     this->trainingPlanView.printTrainingPlan(&trainingPlan);
@@ -220,13 +219,9 @@ void Controller::runTrainingPlans() {
                 } catch (NotFoundException& e) {
                     string str(e.what());
                     this->view.printMessage(&str);
-
-                } catch (exception& e) {
-                    string str("Unknown exception");
-                    this->view.printMessage(&str);
                 }
-            }
-                break;
+        }
+            break;
 
             case 3: {
                 try {
@@ -292,6 +287,34 @@ void Controller::runTrainingPlans() {
                 this->trainingPlanView.printTrainingPlans(trainingPlans);
             }
                 break;
+        case 6: {
+                try {
+                    int trainingPlanId;
+                    int exerciseId;
+
+                    this->trainingPlanView.getExerciseAssociation(trainingPlanId, exerciseId);
+
+                    this->trainingPlanService->addExerciseToTrainingPlan(trainingPlanId, exerciseId);
+
+                    TrainingPlanOUTDTO trainingPlan;
+                    this->trainingPlanService->get(trainingPlanId, trainingPlan);
+
+                    this->trainingPlanView.printTrainingPlan(&trainingPlan);
+
+                } catch (NotFoundException& e) {
+                    string str(e.what());
+                    this->view.printMessage(&str);
+
+                } catch (InvalidDataException& e) {
+                    string str(e.what());
+                    this->view.printMessage(&str);
+
+                } catch (exception& e) {
+                    string str("Unknown exception");
+                    this->view.printMessage(&str);
+                }
+        }
+            break;
 
             default:
                 break;

@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/HP-XTO/Desktop/fsoft/cmake-build-debug/_deps/googletest-src
+# Install script for directory: C:/Users/leand/CLionProjects/fsoft2026_1DE_3/cmake-build-debug/_deps/googletest-src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,17 +34,17 @@ endif()
 
 # Set path to fallback-tool for dependency-resolution.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "C:/Program Files/JetBrains/CLion 2025.1.1/bin/mingw/bin/objdump.exe")
+  set(CMAKE_OBJDUMP "C:/Program Files/JetBrains/CLion 2025.3.3/bin/mingw/bin/objdump.exe")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/HP-XTO/Desktop/fsoft/cmake-build-debug/_deps/googletest-build/googlemock/cmake_install.cmake")
+  include("C:/Users/leand/CLionProjects/fsoft2026_1DE_3/cmake-build-debug/_deps/googletest-build/googlemock/cmake_install.cmake")
 endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "C:/Users/HP-XTO/Desktop/fsoft/cmake-build-debug/_deps/googletest-build/install_local_manifest.txt"
+  file(WRITE "C:/Users/leand/CLionProjects/fsoft2026_1DE_3/cmake-build-debug/_deps/googletest-build/install_local_manifest.txt"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

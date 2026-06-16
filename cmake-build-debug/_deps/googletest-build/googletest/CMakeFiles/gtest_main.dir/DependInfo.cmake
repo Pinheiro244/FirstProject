@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/Users/HP-XTO/Desktop/fsoft/cmake-build-debug/_deps/googletest-src/googletest/src/gtest_main.cc" "_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj" "gcc" "_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj.d"
+  "C:/Users/leand/CLionProjects/fsoft2026_1DE_3/cmake-build-debug/_deps/googletest-src/googletest/src/gtest_main.cc" "_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj" "gcc" "_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

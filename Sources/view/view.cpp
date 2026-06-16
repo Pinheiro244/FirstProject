@@ -40,6 +40,7 @@ int View::menuTrainingPlans() {
     cout << "3 - Remove training plan" << endl;
     cout << "4 - Update training plan" << endl;
     cout << "5 - List training plans" << endl;
+    cout << "6 - Add Exercise to Training Plan" << endl;
     cout << "0 - Back" << endl;
 
     return Utils::getNumber("Option");

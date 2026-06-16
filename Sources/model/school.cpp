@@ -11,3 +11,7 @@ TrainingPlanContainer& School::getTrainingPlanContainer() {
 MatriculaContainer& School::getMatriculaContainer() {
     return this->matriculaContainer;
 }
+
+ExerciseContainer& School::getExerciseContainer() {
+    return this->exerciseContainer;
+}

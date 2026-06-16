@@ -52,10 +52,10 @@ add_executable(fsoft2026_1DE_3
         Sources/exceptions/InvalidDataException.cpp
         Sources/exceptions/NoDataException.cpp
         Sources/exceptions/NotFoundException.cpp
-        tests/StudentTest.cpp
-        tests/TrainingPlanTest.cpp
-        tests/MatriculaTest.cpp
-        tests/ServiceTest.cpp
+        headers/model/exercise.h
+        Sources/model/exercise.cpp
+        Sources/model/exercisecontainer.cpp
+        headers/model/exercisecontainer.h
 )
 
 add_executable(ProjectTester
@@ -94,6 +94,8 @@ add_executable(runTests
         tests/MatriculaTest.cpp
         tests/ServiceTest.cpp
 
+        Sources/model/exercise.cpp
+        Sources/model/exercisecontainer.cpp
         Sources/model/person.cpp
         Sources/model/student.cpp
         Sources/model/studentcontainer.cpp
@@ -123,3 +125,4 @@ add_executable(runTests
 target_link_libraries(runTests gtest gtest_main)
 
 add_test(NAME runTests COMMAND runTests)
+

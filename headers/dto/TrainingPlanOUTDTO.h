@@ -2,6 +2,7 @@
 #define TRAININGPLANOUTDTO_H
 
 #include <string>
+#include <list>
 
 using namespace std;
 
@@ -12,6 +13,7 @@ public:
     string name;
     string objective;
     int durationWeeks;
+    list<string> exercises;
 
     TrainingPlanOUTDTO() = default;
 

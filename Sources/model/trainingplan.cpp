@@ -76,6 +76,18 @@ void TrainingPlan::setDurationWeeks(int durationWeeks) {
     this->durationWeeks = durationWeeks;
 }
 
+void TrainingPlan::addExercise(Exercise* exercise) {
+    if (exercise == nullptr) {
+        throw InvalidDataException("TrainingPlan: invalid exercise");
+    }
+
+    this->exercises.push_back(exercise);
+}
+
+list<Exercise*> TrainingPlan::getExercises() const {
+    return this->exercises;
+}
+
 bool TrainingPlan::operator==(const TrainingPlan& other) const {
     return this->id == other.id;
 }

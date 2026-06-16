@@ -1,16 +1,20 @@
 #include "TrainingPlanMapper.h"
+#include "exercise.h"
 
-void TrainingPlanMapper::model2DTO(
-    TrainingPlan* trainingPlan,
-    TrainingPlanOUTDTO& dto
-) {
+void TrainingPlanMapper::model2DTO(TrainingPlan* trainingPlan, TrainingPlanOUTDTO& obj) {
+    obj.id = trainingPlan->getId();
+    obj.name = trainingPlan->getName();
+    obj.objective = trainingPlan->getObjective();
+    obj.durationWeeks = trainingPlan->getDurationWeeks();
 
-    dto.id = trainingPlan->getId();
-    dto.name = trainingPlan->getName();
-    dto.objective = trainingPlan->getObjective();
-    dto.durationWeeks = trainingPlan->getDurationWeeks();
+    obj.exercises.clear();
+
+    list<Exercise*> exercises = trainingPlan->getExercises();
+
+    for (Exercise* exercise : exercises) {
+        obj.exercises.push_back(exercise->getName());
+    }
 }
-
 void TrainingPlanMapper::listModel2listDTO(
     list<TrainingPlan*> trainingPlans,
     list<TrainingPlanOUTDTO>& dtos

@@ -25,6 +25,8 @@ public:
     void remove(int id, TrainingPlanOUTDTO& dto);
 
     void update(int id, const TrainingPlanINDTO& obj);
+
+    void addExerciseToTrainingPlan(int trainingPlanId, int exerciseId);
 };
 
 #endif

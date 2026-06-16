@@ -16,6 +16,8 @@ public:
     void printTrainingPlan(TrainingPlanOUTDTO *trainingPlan);
 
     void printTrainingPlans(list<TrainingPlanOUTDTO> trainingPlans);
+
+    void getExerciseAssociation(int& trainingPlanId, int& exerciseId);
 };
 
 #endif

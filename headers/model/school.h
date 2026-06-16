@@ -4,6 +4,7 @@
 #include "studentcontainer.h"
 #include "trainingplancontainer.h"
 #include "MatriculaContainer.h"
+#include "exercisecontainer.h"
 
 class School {
 
@@ -11,6 +12,7 @@ private:
     StudentContainer studentContainer;
     TrainingPlanContainer trainingPlanContainer;
     MatriculaContainer matriculaContainer;
+    ExerciseContainer exerciseContainer;
 
 public:
     School() = default;
@@ -22,6 +24,8 @@ public:
     TrainingPlanContainer& getTrainingPlanContainer();
 
     MatriculaContainer& getMatriculaContainer();
+
+    ExerciseContainer& getExerciseContainer();
 };
 
 #endif

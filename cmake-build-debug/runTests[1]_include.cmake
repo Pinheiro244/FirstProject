@@ -1,5 +1,5 @@
-if(EXISTS "C:/Users/HP-XTO/Desktop/fsoft/cmake-build-debug/runTests[1]_tests.cmake")
-  include("C:/Users/HP-XTO/Desktop/fsoft/cmake-build-debug/runTests[1]_tests.cmake")
+if(EXISTS "C:/Users/leand/CLionProjects/fsoft2026_1DE_3/cmake-build-debug/runTests[1]_tests.cmake")
+  include("C:/Users/leand/CLionProjects/fsoft2026_1DE_3/cmake-build-debug/runTests[1]_tests.cmake")
 else()
   add_test(runTests_NOT_BUILT runTests_NOT_BUILT)
 endif()

@@ -100,3 +100,15 @@ void TrainingPlanService::update(int id, const TrainingPlanINDTO& obj) {
     trainingPlan->setObjective(obj.objective);
     trainingPlan->setDurationWeeks(obj.durationWeeks);
 }
+
+void TrainingPlanService::addExerciseToTrainingPlan(int trainingPlanId, int exerciseId) {
+    School* model = this->repo->getModel();
+
+    TrainingPlanContainer& trainingPlanContainer = model->getTrainingPlanContainer();
+    ExerciseContainer& exerciseContainer = model->getExerciseContainer();
+
+    TrainingPlan* trainingPlan = trainingPlanContainer.get(trainingPlanId);
+    Exercise* exercise = exerciseContainer.get(exerciseId);
+
+    trainingPlan->addExercise(exercise);
+}

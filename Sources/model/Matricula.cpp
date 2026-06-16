@@ -1,6 +1,6 @@
 #include "Matricula.h"
 
-#include <stdexcept>
+#include "InvalidDataException.h"
 
 using namespace std;
 
@@ -11,20 +11,27 @@ Matricula::Matricula(
     int day,
     int month,
     int year
-) : id(id), student(student), trainingPlan(trainingPlan) {
+) : id(id) {
 
     if (student == nullptr) {
-        throw invalid_argument("Invalid student.");
+        throw InvalidDataException("Matricula: invalid student.");
     }
 
     if (trainingPlan == nullptr) {
-        throw invalid_argument("Invalid training plan.");
+        throw InvalidDataException("Matricula: invalid training plan.");
     }
 
     if (!isDateValid(day, month, year)) {
-        throw invalid_argument("Invalid matricula date.");
+        throw InvalidDataException(
+            "Matricula: invalid date " +
+            to_string(day) + "/" +
+            to_string(month) + "/" +
+            to_string(year)
+        );
     }
 
+    this->student = student;
+    this->trainingPlan = trainingPlan;
     this->day = day;
     this->month = month;
     this->year = year;
@@ -40,10 +47,30 @@ Matricula::Matricula(const Matricula& other)
 }
 
 bool Matricula::isDateValid(int day, int month, int year) const {
-    return day >= 1 && day <= 31 &&
-           month >= 1 && month <= 12 &&
-           year >= 1900;
+    if (year < 1900) {
+        return false;
+    }
+
+    if (month < 1 || month > 12) {
+        return false;
+    }
+
+    int daysInMonth[] = {
+        31, 28, 31, 30, 31, 30,
+        31, 31, 30, 31, 30, 31
+    };
+
+    bool leapYear =
+        (year % 400 == 0) ||
+        (year % 4 == 0 && year % 100 != 0);
+
+    if (leapYear && month == 2) {
+        daysInMonth[1] = 29;
+    }
+
+    return day >= 1 && day <= daysInMonth[month - 1];
 }
+
 
 int Matricula::getId() const {
     return id;

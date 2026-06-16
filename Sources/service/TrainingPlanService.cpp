@@ -9,13 +9,27 @@ TrainingPlanService::TrainingPlanService(ISchoolRepository* repo) {
     this->repo = repo;
 }
 
+int generateTrainingPlanId(TrainingPlanContainer& container) {
+    int maxId = 0;
+
+    list<TrainingPlan*> trainingPlans = container.getAll();
+
+    for (TrainingPlan* trainingPlan : trainingPlans) {
+        if (trainingPlan->getId() > maxId) {
+            maxId = trainingPlan->getId();
+        }
+    }
+
+    return maxId + 1;
+}
+
 void TrainingPlanService::add(const TrainingPlanINDTO& obj) {
 
     School* model = this->repo->getModel();
 
     TrainingPlanContainer& container = model->getTrainingPlanContainer();
 
-    int id = container.getAll().size() + 1;
+    int id = generateTrainingPlanId(container);
 
     container.add(
         id,

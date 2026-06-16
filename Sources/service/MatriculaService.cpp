@@ -7,6 +7,20 @@ MatriculaService::MatriculaService(ISchoolRepository *repo) {
     this->repo = repo;
 }
 
+int generateMatriculaId(MatriculaContainer& container) {
+    int maxId = 0;
+
+    list<Matricula*> matriculas = container.getAll();
+
+    for (Matricula* matricula : matriculas) {
+        if (matricula->getId() > maxId) {
+            maxId = matricula->getId();
+        }
+    }
+
+    return maxId + 1;
+}
+
 void MatriculaService::add(const MatriculaINDTO& obj) {
 
     School *model = this->repo->getModel();
@@ -18,7 +32,7 @@ void MatriculaService::add(const MatriculaINDTO& obj) {
     Student *student = studentContainer.get(obj.studentId);
     TrainingPlan *trainingPlan = trainingPlanContainer.get(obj.trainingPlanId);
 
-    int id = matriculaContainer.getAll().size() + 1;
+    int id = generateMatriculaId(matriculaContainer);
 
     matriculaContainer.add(
         id,

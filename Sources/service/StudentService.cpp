@@ -9,13 +9,25 @@ StudentService::StudentService(ISchoolRepository* repo) {
     this->repo = repo;
 }
 
+int generateStudentId(StudentContainer& container) {
+    int maxId = 0;
+
+    list<Student*> students = container.getAll();
+
+    for (Student* student : students) {
+        if (student->getId() > maxId) {
+            maxId = student->getId();
+        }
+    }
+
+    return maxId + 1;
+}
+
 void StudentService::add(const StudentINDTO& obj) {
-
     School* model = this->repo->getModel();
-
     StudentContainer& container = model->getStudentContainer();
 
-    int id = container.getAll().size() + 1;
+    int id = generateStudentId(container);
 
     container.add(
         id,
@@ -24,7 +36,6 @@ void StudentService::add(const StudentINDTO& obj) {
         obj.email
     );
 }
-
 void StudentService::getAll(list<StudentOUTDTO>& dtos) {
 
     School* model = this->repo->getModel();
@@ -86,3 +97,5 @@ void StudentService::update(int id, const StudentINDTO& obj) {
     student->setPhoneNumber(obj.phoneNumber);
     student->setEmail(obj.email);
 }
+
+

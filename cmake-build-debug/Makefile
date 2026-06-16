@@ -64,6 +64,16 @@ CMAKE_BINARY_DIR = C:\Users\HP-XTO\Desktop\fsoft\cmake-build-debug
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
+	"C:\Program Files\JetBrains\CLion 2025.1.1\bin\cmake\win\x64\bin\ctest.exe" --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "No interactive CMake dialog available..."
@@ -83,6 +93,51 @@ rebuild_cache:
 # Special rule for the target rebuild_cache
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Available install components are: \"gmock\" \"gtest\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
+	"C:\Program Files\JetBrains\CLion 2025.1.1\bin\cmake\win\x64\bin\cmake.exe" -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
+	"C:\Program Files\JetBrains\CLion 2025.1.1\bin\cmake\win\x64\bin\cmake.exe" -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
+	"C:\Program Files\JetBrains\CLion 2025.1.1\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
+	"C:\Program Files\JetBrains\CLion 2025.1.1\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
+	"C:\Program Files\JetBrains\CLion 2025.1.1\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
+	"C:\Program Files\JetBrains\CLion 2025.1.1\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -141,6 +196,71 @@ ProjectTester/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjectTester.dir\build.make CMakeFiles/ProjectTester.dir/build
 .PHONY : ProjectTester/fast
 
+#=============================================================================
+# Target rules for targets named runTests
+
+# Build rule for target.
+runTests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 runTests
+.PHONY : runTests
+
+# fast build rule for target.
+runTests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/build
+.PHONY : runTests/fast
+
+#=============================================================================
+# Target rules for targets named gmock
+
+# Build rule for target.
+gmock: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 gmock
+.PHONY : gmock
+
+# fast build rule for target.
+gmock/fast:
+	$(MAKE) $(MAKESILENT) -f _deps\googletest-build\googlemock\CMakeFiles\gmock.dir\build.make _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/build
+.PHONY : gmock/fast
+
+#=============================================================================
+# Target rules for targets named gmock_main
+
+# Build rule for target.
+gmock_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 gmock_main
+.PHONY : gmock_main
+
+# fast build rule for target.
+gmock_main/fast:
+	$(MAKE) $(MAKESILENT) -f _deps\googletest-build\googlemock\CMakeFiles\gmock_main.dir\build.make _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build
+.PHONY : gmock_main/fast
+
+#=============================================================================
+# Target rules for targets named gtest
+
+# Build rule for target.
+gtest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 gtest
+.PHONY : gtest
+
+# fast build rule for target.
+gtest/fast:
+	$(MAKE) $(MAKESILENT) -f _deps\googletest-build\googletest\CMakeFiles\gtest.dir\build.make _deps/googletest-build/googletest/CMakeFiles/gtest.dir/build
+.PHONY : gtest/fast
+
+#=============================================================================
+# Target rules for targets named gtest_main
+
+# Build rule for target.
+gtest_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 gtest_main
+.PHONY : gtest_main
+
+# fast build rule for target.
+gtest_main/fast:
+	$(MAKE) $(MAKESILENT) -f _deps\googletest-build\googletest\CMakeFiles\gtest_main.dir\build.make _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build
+.PHONY : gtest_main/fast
+
 ProjectTester/main.obj: ProjectTester/main.cpp.obj
 .PHONY : ProjectTester/main.obj
 
@@ -196,6 +316,7 @@ Sources/exceptions/ApplicationException.obj: Sources/exceptions/ApplicationExcep
 Sources/exceptions/ApplicationException.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/exceptions/ApplicationException.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjectTester.dir\build.make CMakeFiles/ProjectTester.dir/Sources/exceptions/ApplicationException.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/exceptions/ApplicationException.cpp.obj
 .PHONY : Sources/exceptions/ApplicationException.cpp.obj
 
 Sources/exceptions/ApplicationException.i: Sources/exceptions/ApplicationException.cpp.i
@@ -205,6 +326,7 @@ Sources/exceptions/ApplicationException.i: Sources/exceptions/ApplicationExcepti
 Sources/exceptions/ApplicationException.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/exceptions/ApplicationException.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjectTester.dir\build.make CMakeFiles/ProjectTester.dir/Sources/exceptions/ApplicationException.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/exceptions/ApplicationException.cpp.i
 .PHONY : Sources/exceptions/ApplicationException.cpp.i
 
 Sources/exceptions/ApplicationException.s: Sources/exceptions/ApplicationException.cpp.s
@@ -214,6 +336,7 @@ Sources/exceptions/ApplicationException.s: Sources/exceptions/ApplicationExcepti
 Sources/exceptions/ApplicationException.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/exceptions/ApplicationException.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjectTester.dir\build.make CMakeFiles/ProjectTester.dir/Sources/exceptions/ApplicationException.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/exceptions/ApplicationException.cpp.s
 .PHONY : Sources/exceptions/ApplicationException.cpp.s
 
 Sources/exceptions/DataConsistencyException.obj: Sources/exceptions/DataConsistencyException.cpp.obj
@@ -223,6 +346,7 @@ Sources/exceptions/DataConsistencyException.obj: Sources/exceptions/DataConsiste
 Sources/exceptions/DataConsistencyException.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/exceptions/DataConsistencyException.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjectTester.dir\build.make CMakeFiles/ProjectTester.dir/Sources/exceptions/DataConsistencyException.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/exceptions/DataConsistencyException.cpp.obj
 .PHONY : Sources/exceptions/DataConsistencyException.cpp.obj
 
 Sources/exceptions/DataConsistencyException.i: Sources/exceptions/DataConsistencyException.cpp.i
@@ -232,6 +356,7 @@ Sources/exceptions/DataConsistencyException.i: Sources/exceptions/DataConsistenc
 Sources/exceptions/DataConsistencyException.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/exceptions/DataConsistencyException.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjectTester.dir\build.make CMakeFiles/ProjectTester.dir/Sources/exceptions/DataConsistencyException.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/exceptions/DataConsistencyException.cpp.i
 .PHONY : Sources/exceptions/DataConsistencyException.cpp.i
 
 Sources/exceptions/DataConsistencyException.s: Sources/exceptions/DataConsistencyException.cpp.s
@@ -241,6 +366,7 @@ Sources/exceptions/DataConsistencyException.s: Sources/exceptions/DataConsistenc
 Sources/exceptions/DataConsistencyException.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/exceptions/DataConsistencyException.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjectTester.dir\build.make CMakeFiles/ProjectTester.dir/Sources/exceptions/DataConsistencyException.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/exceptions/DataConsistencyException.cpp.s
 .PHONY : Sources/exceptions/DataConsistencyException.cpp.s
 
 Sources/exceptions/DuplicatedDataException.obj: Sources/exceptions/DuplicatedDataException.cpp.obj
@@ -250,6 +376,7 @@ Sources/exceptions/DuplicatedDataException.obj: Sources/exceptions/DuplicatedDat
 Sources/exceptions/DuplicatedDataException.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/exceptions/DuplicatedDataException.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjectTester.dir\build.make CMakeFiles/ProjectTester.dir/Sources/exceptions/DuplicatedDataException.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/exceptions/DuplicatedDataException.cpp.obj
 .PHONY : Sources/exceptions/DuplicatedDataException.cpp.obj
 
 Sources/exceptions/DuplicatedDataException.i: Sources/exceptions/DuplicatedDataException.cpp.i
@@ -259,6 +386,7 @@ Sources/exceptions/DuplicatedDataException.i: Sources/exceptions/DuplicatedDataE
 Sources/exceptions/DuplicatedDataException.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/exceptions/DuplicatedDataException.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjectTester.dir\build.make CMakeFiles/ProjectTester.dir/Sources/exceptions/DuplicatedDataException.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/exceptions/DuplicatedDataException.cpp.i
 .PHONY : Sources/exceptions/DuplicatedDataException.cpp.i
 
 Sources/exceptions/DuplicatedDataException.s: Sources/exceptions/DuplicatedDataException.cpp.s
@@ -268,6 +396,7 @@ Sources/exceptions/DuplicatedDataException.s: Sources/exceptions/DuplicatedDataE
 Sources/exceptions/DuplicatedDataException.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/exceptions/DuplicatedDataException.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjectTester.dir\build.make CMakeFiles/ProjectTester.dir/Sources/exceptions/DuplicatedDataException.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/exceptions/DuplicatedDataException.cpp.s
 .PHONY : Sources/exceptions/DuplicatedDataException.cpp.s
 
 Sources/exceptions/InvalidDataException.obj: Sources/exceptions/InvalidDataException.cpp.obj
@@ -277,6 +406,7 @@ Sources/exceptions/InvalidDataException.obj: Sources/exceptions/InvalidDataExcep
 Sources/exceptions/InvalidDataException.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/exceptions/InvalidDataException.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjectTester.dir\build.make CMakeFiles/ProjectTester.dir/Sources/exceptions/InvalidDataException.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/exceptions/InvalidDataException.cpp.obj
 .PHONY : Sources/exceptions/InvalidDataException.cpp.obj
 
 Sources/exceptions/InvalidDataException.i: Sources/exceptions/InvalidDataException.cpp.i
@@ -286,6 +416,7 @@ Sources/exceptions/InvalidDataException.i: Sources/exceptions/InvalidDataExcepti
 Sources/exceptions/InvalidDataException.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/exceptions/InvalidDataException.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjectTester.dir\build.make CMakeFiles/ProjectTester.dir/Sources/exceptions/InvalidDataException.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/exceptions/InvalidDataException.cpp.i
 .PHONY : Sources/exceptions/InvalidDataException.cpp.i
 
 Sources/exceptions/InvalidDataException.s: Sources/exceptions/InvalidDataException.cpp.s
@@ -295,6 +426,7 @@ Sources/exceptions/InvalidDataException.s: Sources/exceptions/InvalidDataExcepti
 Sources/exceptions/InvalidDataException.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/exceptions/InvalidDataException.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjectTester.dir\build.make CMakeFiles/ProjectTester.dir/Sources/exceptions/InvalidDataException.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/exceptions/InvalidDataException.cpp.s
 .PHONY : Sources/exceptions/InvalidDataException.cpp.s
 
 Sources/exceptions/NoDataException.obj: Sources/exceptions/NoDataException.cpp.obj
@@ -331,6 +463,7 @@ Sources/exceptions/NotFoundException.obj: Sources/exceptions/NotFoundException.c
 Sources/exceptions/NotFoundException.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/exceptions/NotFoundException.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjectTester.dir\build.make CMakeFiles/ProjectTester.dir/Sources/exceptions/NotFoundException.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/exceptions/NotFoundException.cpp.obj
 .PHONY : Sources/exceptions/NotFoundException.cpp.obj
 
 Sources/exceptions/NotFoundException.i: Sources/exceptions/NotFoundException.cpp.i
@@ -340,6 +473,7 @@ Sources/exceptions/NotFoundException.i: Sources/exceptions/NotFoundException.cpp
 Sources/exceptions/NotFoundException.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/exceptions/NotFoundException.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjectTester.dir\build.make CMakeFiles/ProjectTester.dir/Sources/exceptions/NotFoundException.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/exceptions/NotFoundException.cpp.i
 .PHONY : Sources/exceptions/NotFoundException.cpp.i
 
 Sources/exceptions/NotFoundException.s: Sources/exceptions/NotFoundException.cpp.s
@@ -349,6 +483,7 @@ Sources/exceptions/NotFoundException.s: Sources/exceptions/NotFoundException.cpp
 Sources/exceptions/NotFoundException.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/exceptions/NotFoundException.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjectTester.dir\build.make CMakeFiles/ProjectTester.dir/Sources/exceptions/NotFoundException.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/exceptions/NotFoundException.cpp.s
 .PHONY : Sources/exceptions/NotFoundException.cpp.s
 
 Sources/mappers/MatriculaMapper.obj: Sources/mappers/MatriculaMapper.cpp.obj
@@ -357,6 +492,7 @@ Sources/mappers/MatriculaMapper.obj: Sources/mappers/MatriculaMapper.cpp.obj
 # target to build an object file
 Sources/mappers/MatriculaMapper.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/mappers/MatriculaMapper.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/mappers/MatriculaMapper.cpp.obj
 .PHONY : Sources/mappers/MatriculaMapper.cpp.obj
 
 Sources/mappers/MatriculaMapper.i: Sources/mappers/MatriculaMapper.cpp.i
@@ -365,6 +501,7 @@ Sources/mappers/MatriculaMapper.i: Sources/mappers/MatriculaMapper.cpp.i
 # target to preprocess a source file
 Sources/mappers/MatriculaMapper.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/mappers/MatriculaMapper.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/mappers/MatriculaMapper.cpp.i
 .PHONY : Sources/mappers/MatriculaMapper.cpp.i
 
 Sources/mappers/MatriculaMapper.s: Sources/mappers/MatriculaMapper.cpp.s
@@ -373,6 +510,7 @@ Sources/mappers/MatriculaMapper.s: Sources/mappers/MatriculaMapper.cpp.s
 # target to generate assembly for a file
 Sources/mappers/MatriculaMapper.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/mappers/MatriculaMapper.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/mappers/MatriculaMapper.cpp.s
 .PHONY : Sources/mappers/MatriculaMapper.cpp.s
 
 Sources/mappers/StudentMapper.obj: Sources/mappers/StudentMapper.cpp.obj
@@ -381,6 +519,7 @@ Sources/mappers/StudentMapper.obj: Sources/mappers/StudentMapper.cpp.obj
 # target to build an object file
 Sources/mappers/StudentMapper.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/mappers/StudentMapper.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/mappers/StudentMapper.cpp.obj
 .PHONY : Sources/mappers/StudentMapper.cpp.obj
 
 Sources/mappers/StudentMapper.i: Sources/mappers/StudentMapper.cpp.i
@@ -389,6 +528,7 @@ Sources/mappers/StudentMapper.i: Sources/mappers/StudentMapper.cpp.i
 # target to preprocess a source file
 Sources/mappers/StudentMapper.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/mappers/StudentMapper.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/mappers/StudentMapper.cpp.i
 .PHONY : Sources/mappers/StudentMapper.cpp.i
 
 Sources/mappers/StudentMapper.s: Sources/mappers/StudentMapper.cpp.s
@@ -397,6 +537,7 @@ Sources/mappers/StudentMapper.s: Sources/mappers/StudentMapper.cpp.s
 # target to generate assembly for a file
 Sources/mappers/StudentMapper.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/mappers/StudentMapper.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/mappers/StudentMapper.cpp.s
 .PHONY : Sources/mappers/StudentMapper.cpp.s
 
 Sources/mappers/TrainingPlanMapper.obj: Sources/mappers/TrainingPlanMapper.cpp.obj
@@ -405,6 +546,7 @@ Sources/mappers/TrainingPlanMapper.obj: Sources/mappers/TrainingPlanMapper.cpp.o
 # target to build an object file
 Sources/mappers/TrainingPlanMapper.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/mappers/TrainingPlanMapper.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/mappers/TrainingPlanMapper.cpp.obj
 .PHONY : Sources/mappers/TrainingPlanMapper.cpp.obj
 
 Sources/mappers/TrainingPlanMapper.i: Sources/mappers/TrainingPlanMapper.cpp.i
@@ -413,6 +555,7 @@ Sources/mappers/TrainingPlanMapper.i: Sources/mappers/TrainingPlanMapper.cpp.i
 # target to preprocess a source file
 Sources/mappers/TrainingPlanMapper.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/mappers/TrainingPlanMapper.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/mappers/TrainingPlanMapper.cpp.i
 .PHONY : Sources/mappers/TrainingPlanMapper.cpp.i
 
 Sources/mappers/TrainingPlanMapper.s: Sources/mappers/TrainingPlanMapper.cpp.s
@@ -421,6 +564,7 @@ Sources/mappers/TrainingPlanMapper.s: Sources/mappers/TrainingPlanMapper.cpp.s
 # target to generate assembly for a file
 Sources/mappers/TrainingPlanMapper.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/mappers/TrainingPlanMapper.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/mappers/TrainingPlanMapper.cpp.s
 .PHONY : Sources/mappers/TrainingPlanMapper.cpp.s
 
 Sources/model/Matricula.obj: Sources/model/Matricula.cpp.obj
@@ -430,6 +574,7 @@ Sources/model/Matricula.obj: Sources/model/Matricula.cpp.obj
 Sources/model/Matricula.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/model/Matricula.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjectTester.dir\build.make CMakeFiles/ProjectTester.dir/Sources/model/Matricula.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/model/Matricula.cpp.obj
 .PHONY : Sources/model/Matricula.cpp.obj
 
 Sources/model/Matricula.i: Sources/model/Matricula.cpp.i
@@ -439,6 +584,7 @@ Sources/model/Matricula.i: Sources/model/Matricula.cpp.i
 Sources/model/Matricula.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/model/Matricula.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjectTester.dir\build.make CMakeFiles/ProjectTester.dir/Sources/model/Matricula.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/model/Matricula.cpp.i
 .PHONY : Sources/model/Matricula.cpp.i
 
 Sources/model/Matricula.s: Sources/model/Matricula.cpp.s
@@ -448,6 +594,7 @@ Sources/model/Matricula.s: Sources/model/Matricula.cpp.s
 Sources/model/Matricula.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/model/Matricula.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjectTester.dir\build.make CMakeFiles/ProjectTester.dir/Sources/model/Matricula.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/model/Matricula.cpp.s
 .PHONY : Sources/model/Matricula.cpp.s
 
 Sources/model/MatriculaContainer.obj: Sources/model/MatriculaContainer.cpp.obj
@@ -457,6 +604,7 @@ Sources/model/MatriculaContainer.obj: Sources/model/MatriculaContainer.cpp.obj
 Sources/model/MatriculaContainer.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/model/MatriculaContainer.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjectTester.dir\build.make CMakeFiles/ProjectTester.dir/Sources/model/MatriculaContainer.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/model/MatriculaContainer.cpp.obj
 .PHONY : Sources/model/MatriculaContainer.cpp.obj
 
 Sources/model/MatriculaContainer.i: Sources/model/MatriculaContainer.cpp.i
@@ -466,6 +614,7 @@ Sources/model/MatriculaContainer.i: Sources/model/MatriculaContainer.cpp.i
 Sources/model/MatriculaContainer.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/model/MatriculaContainer.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjectTester.dir\build.make CMakeFiles/ProjectTester.dir/Sources/model/MatriculaContainer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/model/MatriculaContainer.cpp.i
 .PHONY : Sources/model/MatriculaContainer.cpp.i
 
 Sources/model/MatriculaContainer.s: Sources/model/MatriculaContainer.cpp.s
@@ -475,6 +624,7 @@ Sources/model/MatriculaContainer.s: Sources/model/MatriculaContainer.cpp.s
 Sources/model/MatriculaContainer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/model/MatriculaContainer.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjectTester.dir\build.make CMakeFiles/ProjectTester.dir/Sources/model/MatriculaContainer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/model/MatriculaContainer.cpp.s
 .PHONY : Sources/model/MatriculaContainer.cpp.s
 
 Sources/model/person.obj: Sources/model/person.cpp.obj
@@ -484,6 +634,7 @@ Sources/model/person.obj: Sources/model/person.cpp.obj
 Sources/model/person.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/model/person.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjectTester.dir\build.make CMakeFiles/ProjectTester.dir/Sources/model/person.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/model/person.cpp.obj
 .PHONY : Sources/model/person.cpp.obj
 
 Sources/model/person.i: Sources/model/person.cpp.i
@@ -493,6 +644,7 @@ Sources/model/person.i: Sources/model/person.cpp.i
 Sources/model/person.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/model/person.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjectTester.dir\build.make CMakeFiles/ProjectTester.dir/Sources/model/person.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/model/person.cpp.i
 .PHONY : Sources/model/person.cpp.i
 
 Sources/model/person.s: Sources/model/person.cpp.s
@@ -502,6 +654,7 @@ Sources/model/person.s: Sources/model/person.cpp.s
 Sources/model/person.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/model/person.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjectTester.dir\build.make CMakeFiles/ProjectTester.dir/Sources/model/person.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/model/person.cpp.s
 .PHONY : Sources/model/person.cpp.s
 
 Sources/model/school.obj: Sources/model/school.cpp.obj
@@ -510,6 +663,7 @@ Sources/model/school.obj: Sources/model/school.cpp.obj
 # target to build an object file
 Sources/model/school.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/model/school.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/model/school.cpp.obj
 .PHONY : Sources/model/school.cpp.obj
 
 Sources/model/school.i: Sources/model/school.cpp.i
@@ -518,6 +672,7 @@ Sources/model/school.i: Sources/model/school.cpp.i
 # target to preprocess a source file
 Sources/model/school.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/model/school.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/model/school.cpp.i
 .PHONY : Sources/model/school.cpp.i
 
 Sources/model/school.s: Sources/model/school.cpp.s
@@ -526,6 +681,7 @@ Sources/model/school.s: Sources/model/school.cpp.s
 # target to generate assembly for a file
 Sources/model/school.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/model/school.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/model/school.cpp.s
 .PHONY : Sources/model/school.cpp.s
 
 Sources/model/student.obj: Sources/model/student.cpp.obj
@@ -535,6 +691,7 @@ Sources/model/student.obj: Sources/model/student.cpp.obj
 Sources/model/student.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/model/student.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjectTester.dir\build.make CMakeFiles/ProjectTester.dir/Sources/model/student.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/model/student.cpp.obj
 .PHONY : Sources/model/student.cpp.obj
 
 Sources/model/student.i: Sources/model/student.cpp.i
@@ -544,6 +701,7 @@ Sources/model/student.i: Sources/model/student.cpp.i
 Sources/model/student.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/model/student.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjectTester.dir\build.make CMakeFiles/ProjectTester.dir/Sources/model/student.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/model/student.cpp.i
 .PHONY : Sources/model/student.cpp.i
 
 Sources/model/student.s: Sources/model/student.cpp.s
@@ -553,6 +711,7 @@ Sources/model/student.s: Sources/model/student.cpp.s
 Sources/model/student.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/model/student.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjectTester.dir\build.make CMakeFiles/ProjectTester.dir/Sources/model/student.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/model/student.cpp.s
 .PHONY : Sources/model/student.cpp.s
 
 Sources/model/studentcontainer.obj: Sources/model/studentcontainer.cpp.obj
@@ -562,6 +721,7 @@ Sources/model/studentcontainer.obj: Sources/model/studentcontainer.cpp.obj
 Sources/model/studentcontainer.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/model/studentcontainer.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjectTester.dir\build.make CMakeFiles/ProjectTester.dir/Sources/model/studentcontainer.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/model/studentcontainer.cpp.obj
 .PHONY : Sources/model/studentcontainer.cpp.obj
 
 Sources/model/studentcontainer.i: Sources/model/studentcontainer.cpp.i
@@ -571,6 +731,7 @@ Sources/model/studentcontainer.i: Sources/model/studentcontainer.cpp.i
 Sources/model/studentcontainer.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/model/studentcontainer.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjectTester.dir\build.make CMakeFiles/ProjectTester.dir/Sources/model/studentcontainer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/model/studentcontainer.cpp.i
 .PHONY : Sources/model/studentcontainer.cpp.i
 
 Sources/model/studentcontainer.s: Sources/model/studentcontainer.cpp.s
@@ -580,6 +741,7 @@ Sources/model/studentcontainer.s: Sources/model/studentcontainer.cpp.s
 Sources/model/studentcontainer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/model/studentcontainer.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjectTester.dir\build.make CMakeFiles/ProjectTester.dir/Sources/model/studentcontainer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/model/studentcontainer.cpp.s
 .PHONY : Sources/model/studentcontainer.cpp.s
 
 Sources/model/trainingplan.obj: Sources/model/trainingplan.cpp.obj
@@ -589,6 +751,7 @@ Sources/model/trainingplan.obj: Sources/model/trainingplan.cpp.obj
 Sources/model/trainingplan.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/model/trainingplan.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjectTester.dir\build.make CMakeFiles/ProjectTester.dir/Sources/model/trainingplan.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/model/trainingplan.cpp.obj
 .PHONY : Sources/model/trainingplan.cpp.obj
 
 Sources/model/trainingplan.i: Sources/model/trainingplan.cpp.i
@@ -598,6 +761,7 @@ Sources/model/trainingplan.i: Sources/model/trainingplan.cpp.i
 Sources/model/trainingplan.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/model/trainingplan.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjectTester.dir\build.make CMakeFiles/ProjectTester.dir/Sources/model/trainingplan.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/model/trainingplan.cpp.i
 .PHONY : Sources/model/trainingplan.cpp.i
 
 Sources/model/trainingplan.s: Sources/model/trainingplan.cpp.s
@@ -607,6 +771,7 @@ Sources/model/trainingplan.s: Sources/model/trainingplan.cpp.s
 Sources/model/trainingplan.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/model/trainingplan.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjectTester.dir\build.make CMakeFiles/ProjectTester.dir/Sources/model/trainingplan.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/model/trainingplan.cpp.s
 .PHONY : Sources/model/trainingplan.cpp.s
 
 Sources/model/trainingplancontainer.obj: Sources/model/trainingplancontainer.cpp.obj
@@ -616,6 +781,7 @@ Sources/model/trainingplancontainer.obj: Sources/model/trainingplancontainer.cpp
 Sources/model/trainingplancontainer.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/model/trainingplancontainer.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjectTester.dir\build.make CMakeFiles/ProjectTester.dir/Sources/model/trainingplancontainer.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/model/trainingplancontainer.cpp.obj
 .PHONY : Sources/model/trainingplancontainer.cpp.obj
 
 Sources/model/trainingplancontainer.i: Sources/model/trainingplancontainer.cpp.i
@@ -625,6 +791,7 @@ Sources/model/trainingplancontainer.i: Sources/model/trainingplancontainer.cpp.i
 Sources/model/trainingplancontainer.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/model/trainingplancontainer.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjectTester.dir\build.make CMakeFiles/ProjectTester.dir/Sources/model/trainingplancontainer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/model/trainingplancontainer.cpp.i
 .PHONY : Sources/model/trainingplancontainer.cpp.i
 
 Sources/model/trainingplancontainer.s: Sources/model/trainingplancontainer.cpp.s
@@ -634,6 +801,7 @@ Sources/model/trainingplancontainer.s: Sources/model/trainingplancontainer.cpp.s
 Sources/model/trainingplancontainer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/model/trainingplancontainer.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjectTester.dir\build.make CMakeFiles/ProjectTester.dir/Sources/model/trainingplancontainer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/model/trainingplancontainer.cpp.s
 .PHONY : Sources/model/trainingplancontainer.cpp.s
 
 Sources/repo/SchoolMemoryRepository.obj: Sources/repo/SchoolMemoryRepository.cpp.obj
@@ -642,6 +810,7 @@ Sources/repo/SchoolMemoryRepository.obj: Sources/repo/SchoolMemoryRepository.cpp
 # target to build an object file
 Sources/repo/SchoolMemoryRepository.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/repo/SchoolMemoryRepository.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/repo/SchoolMemoryRepository.cpp.obj
 .PHONY : Sources/repo/SchoolMemoryRepository.cpp.obj
 
 Sources/repo/SchoolMemoryRepository.i: Sources/repo/SchoolMemoryRepository.cpp.i
@@ -650,6 +819,7 @@ Sources/repo/SchoolMemoryRepository.i: Sources/repo/SchoolMemoryRepository.cpp.i
 # target to preprocess a source file
 Sources/repo/SchoolMemoryRepository.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/repo/SchoolMemoryRepository.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/repo/SchoolMemoryRepository.cpp.i
 .PHONY : Sources/repo/SchoolMemoryRepository.cpp.i
 
 Sources/repo/SchoolMemoryRepository.s: Sources/repo/SchoolMemoryRepository.cpp.s
@@ -658,6 +828,7 @@ Sources/repo/SchoolMemoryRepository.s: Sources/repo/SchoolMemoryRepository.cpp.s
 # target to generate assembly for a file
 Sources/repo/SchoolMemoryRepository.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/repo/SchoolMemoryRepository.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/repo/SchoolMemoryRepository.cpp.s
 .PHONY : Sources/repo/SchoolMemoryRepository.cpp.s
 
 Sources/service/MatriculaService.obj: Sources/service/MatriculaService.cpp.obj
@@ -666,6 +837,7 @@ Sources/service/MatriculaService.obj: Sources/service/MatriculaService.cpp.obj
 # target to build an object file
 Sources/service/MatriculaService.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/service/MatriculaService.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/service/MatriculaService.cpp.obj
 .PHONY : Sources/service/MatriculaService.cpp.obj
 
 Sources/service/MatriculaService.i: Sources/service/MatriculaService.cpp.i
@@ -674,6 +846,7 @@ Sources/service/MatriculaService.i: Sources/service/MatriculaService.cpp.i
 # target to preprocess a source file
 Sources/service/MatriculaService.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/service/MatriculaService.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/service/MatriculaService.cpp.i
 .PHONY : Sources/service/MatriculaService.cpp.i
 
 Sources/service/MatriculaService.s: Sources/service/MatriculaService.cpp.s
@@ -682,6 +855,7 @@ Sources/service/MatriculaService.s: Sources/service/MatriculaService.cpp.s
 # target to generate assembly for a file
 Sources/service/MatriculaService.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/service/MatriculaService.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/service/MatriculaService.cpp.s
 .PHONY : Sources/service/MatriculaService.cpp.s
 
 Sources/service/StudentService.obj: Sources/service/StudentService.cpp.obj
@@ -690,6 +864,7 @@ Sources/service/StudentService.obj: Sources/service/StudentService.cpp.obj
 # target to build an object file
 Sources/service/StudentService.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/service/StudentService.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/service/StudentService.cpp.obj
 .PHONY : Sources/service/StudentService.cpp.obj
 
 Sources/service/StudentService.i: Sources/service/StudentService.cpp.i
@@ -698,6 +873,7 @@ Sources/service/StudentService.i: Sources/service/StudentService.cpp.i
 # target to preprocess a source file
 Sources/service/StudentService.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/service/StudentService.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/service/StudentService.cpp.i
 .PHONY : Sources/service/StudentService.cpp.i
 
 Sources/service/StudentService.s: Sources/service/StudentService.cpp.s
@@ -706,6 +882,7 @@ Sources/service/StudentService.s: Sources/service/StudentService.cpp.s
 # target to generate assembly for a file
 Sources/service/StudentService.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/service/StudentService.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/service/StudentService.cpp.s
 .PHONY : Sources/service/StudentService.cpp.s
 
 Sources/service/TrainingPlanService.obj: Sources/service/TrainingPlanService.cpp.obj
@@ -714,6 +891,7 @@ Sources/service/TrainingPlanService.obj: Sources/service/TrainingPlanService.cpp
 # target to build an object file
 Sources/service/TrainingPlanService.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/service/TrainingPlanService.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/service/TrainingPlanService.cpp.obj
 .PHONY : Sources/service/TrainingPlanService.cpp.obj
 
 Sources/service/TrainingPlanService.i: Sources/service/TrainingPlanService.cpp.i
@@ -722,6 +900,7 @@ Sources/service/TrainingPlanService.i: Sources/service/TrainingPlanService.cpp.i
 # target to preprocess a source file
 Sources/service/TrainingPlanService.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/service/TrainingPlanService.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/service/TrainingPlanService.cpp.i
 .PHONY : Sources/service/TrainingPlanService.cpp.i
 
 Sources/service/TrainingPlanService.s: Sources/service/TrainingPlanService.cpp.s
@@ -730,6 +909,7 @@ Sources/service/TrainingPlanService.s: Sources/service/TrainingPlanService.cpp.s
 # target to generate assembly for a file
 Sources/service/TrainingPlanService.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/Sources/service/TrainingPlanService.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/Sources/service/TrainingPlanService.cpp.s
 .PHONY : Sources/service/TrainingPlanService.cpp.s
 
 Sources/view/MatriculaView.obj: Sources/view/MatriculaView.cpp.obj
@@ -876,6 +1056,114 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+tests/MatriculaTest.obj: tests/MatriculaTest.cpp.obj
+.PHONY : tests/MatriculaTest.obj
+
+# target to build an object file
+tests/MatriculaTest.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/tests/MatriculaTest.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/tests/MatriculaTest.cpp.obj
+.PHONY : tests/MatriculaTest.cpp.obj
+
+tests/MatriculaTest.i: tests/MatriculaTest.cpp.i
+.PHONY : tests/MatriculaTest.i
+
+# target to preprocess a source file
+tests/MatriculaTest.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/tests/MatriculaTest.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/tests/MatriculaTest.cpp.i
+.PHONY : tests/MatriculaTest.cpp.i
+
+tests/MatriculaTest.s: tests/MatriculaTest.cpp.s
+.PHONY : tests/MatriculaTest.s
+
+# target to generate assembly for a file
+tests/MatriculaTest.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/tests/MatriculaTest.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/tests/MatriculaTest.cpp.s
+.PHONY : tests/MatriculaTest.cpp.s
+
+tests/ServiceTest.obj: tests/ServiceTest.cpp.obj
+.PHONY : tests/ServiceTest.obj
+
+# target to build an object file
+tests/ServiceTest.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/tests/ServiceTest.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/tests/ServiceTest.cpp.obj
+.PHONY : tests/ServiceTest.cpp.obj
+
+tests/ServiceTest.i: tests/ServiceTest.cpp.i
+.PHONY : tests/ServiceTest.i
+
+# target to preprocess a source file
+tests/ServiceTest.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/tests/ServiceTest.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/tests/ServiceTest.cpp.i
+.PHONY : tests/ServiceTest.cpp.i
+
+tests/ServiceTest.s: tests/ServiceTest.cpp.s
+.PHONY : tests/ServiceTest.s
+
+# target to generate assembly for a file
+tests/ServiceTest.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/tests/ServiceTest.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/tests/ServiceTest.cpp.s
+.PHONY : tests/ServiceTest.cpp.s
+
+tests/StudentTest.obj: tests/StudentTest.cpp.obj
+.PHONY : tests/StudentTest.obj
+
+# target to build an object file
+tests/StudentTest.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/tests/StudentTest.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/tests/StudentTest.cpp.obj
+.PHONY : tests/StudentTest.cpp.obj
+
+tests/StudentTest.i: tests/StudentTest.cpp.i
+.PHONY : tests/StudentTest.i
+
+# target to preprocess a source file
+tests/StudentTest.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/tests/StudentTest.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/tests/StudentTest.cpp.i
+.PHONY : tests/StudentTest.cpp.i
+
+tests/StudentTest.s: tests/StudentTest.cpp.s
+.PHONY : tests/StudentTest.s
+
+# target to generate assembly for a file
+tests/StudentTest.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/tests/StudentTest.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/tests/StudentTest.cpp.s
+.PHONY : tests/StudentTest.cpp.s
+
+tests/TrainingPlanTest.obj: tests/TrainingPlanTest.cpp.obj
+.PHONY : tests/TrainingPlanTest.obj
+
+# target to build an object file
+tests/TrainingPlanTest.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/tests/TrainingPlanTest.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/tests/TrainingPlanTest.cpp.obj
+.PHONY : tests/TrainingPlanTest.cpp.obj
+
+tests/TrainingPlanTest.i: tests/TrainingPlanTest.cpp.i
+.PHONY : tests/TrainingPlanTest.i
+
+# target to preprocess a source file
+tests/TrainingPlanTest.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/tests/TrainingPlanTest.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/tests/TrainingPlanTest.cpp.i
+.PHONY : tests/TrainingPlanTest.cpp.i
+
+tests/TrainingPlanTest.s: tests/TrainingPlanTest.cpp.s
+.PHONY : tests/TrainingPlanTest.s
+
+# target to generate assembly for a file
+tests/TrainingPlanTest.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/tests/TrainingPlanTest.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/tests/TrainingPlanTest.cpp.s
+.PHONY : tests/TrainingPlanTest.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -883,9 +1171,19 @@ help:
 	@echo ... clean
 	@echo ... depend
 	@echo ... edit_cache
+	@echo ... install
+	@echo ... install/local
+	@echo ... install/strip
+	@echo ... list_install_components
 	@echo ... rebuild_cache
+	@echo ... test
 	@echo ... ProjectTester
 	@echo ... fsoft2026_1DE_3
+	@echo ... gmock
+	@echo ... gmock_main
+	@echo ... gtest
+	@echo ... gtest_main
+	@echo ... runTests
 	@echo ... ProjectTester/main.obj
 	@echo ... ProjectTester/main.i
 	@echo ... ProjectTester/main.s
@@ -973,6 +1271,18 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... tests/MatriculaTest.obj
+	@echo ... tests/MatriculaTest.i
+	@echo ... tests/MatriculaTest.s
+	@echo ... tests/ServiceTest.obj
+	@echo ... tests/ServiceTest.i
+	@echo ... tests/ServiceTest.s
+	@echo ... tests/StudentTest.obj
+	@echo ... tests/StudentTest.i
+	@echo ... tests/StudentTest.s
+	@echo ... tests/TrainingPlanTest.obj
+	@echo ... tests/TrainingPlanTest.i
+	@echo ... tests/TrainingPlanTest.s
 .PHONY : help
 
 

@@ -491,6 +491,66 @@ CMakeFiles/fsoft2026_1DE_3.dir/Sources/exceptions/NotFoundException.cpp.s: cmake
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/fsoft2026_1DE_3.dir/Sources/exceptions/NotFoundException.cpp.s"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\HP-XTO\Desktop\fsoft\Sources\exceptions\NotFoundException.cpp -o CMakeFiles\fsoft2026_1DE_3.dir\Sources\exceptions\NotFoundException.cpp.s
 
+CMakeFiles/fsoft2026_1DE_3.dir/tests/StudentTest.cpp.obj: CMakeFiles/fsoft2026_1DE_3.dir/flags.make
+CMakeFiles/fsoft2026_1DE_3.dir/tests/StudentTest.cpp.obj: CMakeFiles/fsoft2026_1DE_3.dir/includes_CXX.rsp
+CMakeFiles/fsoft2026_1DE_3.dir/tests/StudentTest.cpp.obj: C:/Users/HP-XTO/Desktop/fsoft/tests/StudentTest.cpp
+CMakeFiles/fsoft2026_1DE_3.dir/tests/StudentTest.cpp.obj: CMakeFiles/fsoft2026_1DE_3.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\HP-XTO\Desktop\fsoft\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/fsoft2026_1DE_3.dir/tests/StudentTest.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fsoft2026_1DE_3.dir/tests/StudentTest.cpp.obj -MF CMakeFiles\fsoft2026_1DE_3.dir\tests\StudentTest.cpp.obj.d -o CMakeFiles\fsoft2026_1DE_3.dir\tests\StudentTest.cpp.obj -c C:\Users\HP-XTO\Desktop\fsoft\tests\StudentTest.cpp
+
+CMakeFiles/fsoft2026_1DE_3.dir/tests/StudentTest.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/fsoft2026_1DE_3.dir/tests/StudentTest.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\HP-XTO\Desktop\fsoft\tests\StudentTest.cpp > CMakeFiles\fsoft2026_1DE_3.dir\tests\StudentTest.cpp.i
+
+CMakeFiles/fsoft2026_1DE_3.dir/tests/StudentTest.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/fsoft2026_1DE_3.dir/tests/StudentTest.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\HP-XTO\Desktop\fsoft\tests\StudentTest.cpp -o CMakeFiles\fsoft2026_1DE_3.dir\tests\StudentTest.cpp.s
+
+CMakeFiles/fsoft2026_1DE_3.dir/tests/TrainingPlanTest.cpp.obj: CMakeFiles/fsoft2026_1DE_3.dir/flags.make
+CMakeFiles/fsoft2026_1DE_3.dir/tests/TrainingPlanTest.cpp.obj: CMakeFiles/fsoft2026_1DE_3.dir/includes_CXX.rsp
+CMakeFiles/fsoft2026_1DE_3.dir/tests/TrainingPlanTest.cpp.obj: C:/Users/HP-XTO/Desktop/fsoft/tests/TrainingPlanTest.cpp
+CMakeFiles/fsoft2026_1DE_3.dir/tests/TrainingPlanTest.cpp.obj: CMakeFiles/fsoft2026_1DE_3.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\HP-XTO\Desktop\fsoft\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/fsoft2026_1DE_3.dir/tests/TrainingPlanTest.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fsoft2026_1DE_3.dir/tests/TrainingPlanTest.cpp.obj -MF CMakeFiles\fsoft2026_1DE_3.dir\tests\TrainingPlanTest.cpp.obj.d -o CMakeFiles\fsoft2026_1DE_3.dir\tests\TrainingPlanTest.cpp.obj -c C:\Users\HP-XTO\Desktop\fsoft\tests\TrainingPlanTest.cpp
+
+CMakeFiles/fsoft2026_1DE_3.dir/tests/TrainingPlanTest.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/fsoft2026_1DE_3.dir/tests/TrainingPlanTest.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\HP-XTO\Desktop\fsoft\tests\TrainingPlanTest.cpp > CMakeFiles\fsoft2026_1DE_3.dir\tests\TrainingPlanTest.cpp.i
+
+CMakeFiles/fsoft2026_1DE_3.dir/tests/TrainingPlanTest.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/fsoft2026_1DE_3.dir/tests/TrainingPlanTest.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\HP-XTO\Desktop\fsoft\tests\TrainingPlanTest.cpp -o CMakeFiles\fsoft2026_1DE_3.dir\tests\TrainingPlanTest.cpp.s
+
+CMakeFiles/fsoft2026_1DE_3.dir/tests/MatriculaTest.cpp.obj: CMakeFiles/fsoft2026_1DE_3.dir/flags.make
+CMakeFiles/fsoft2026_1DE_3.dir/tests/MatriculaTest.cpp.obj: CMakeFiles/fsoft2026_1DE_3.dir/includes_CXX.rsp
+CMakeFiles/fsoft2026_1DE_3.dir/tests/MatriculaTest.cpp.obj: C:/Users/HP-XTO/Desktop/fsoft/tests/MatriculaTest.cpp
+CMakeFiles/fsoft2026_1DE_3.dir/tests/MatriculaTest.cpp.obj: CMakeFiles/fsoft2026_1DE_3.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\HP-XTO\Desktop\fsoft\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/fsoft2026_1DE_3.dir/tests/MatriculaTest.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fsoft2026_1DE_3.dir/tests/MatriculaTest.cpp.obj -MF CMakeFiles\fsoft2026_1DE_3.dir\tests\MatriculaTest.cpp.obj.d -o CMakeFiles\fsoft2026_1DE_3.dir\tests\MatriculaTest.cpp.obj -c C:\Users\HP-XTO\Desktop\fsoft\tests\MatriculaTest.cpp
+
+CMakeFiles/fsoft2026_1DE_3.dir/tests/MatriculaTest.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/fsoft2026_1DE_3.dir/tests/MatriculaTest.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\HP-XTO\Desktop\fsoft\tests\MatriculaTest.cpp > CMakeFiles\fsoft2026_1DE_3.dir\tests\MatriculaTest.cpp.i
+
+CMakeFiles/fsoft2026_1DE_3.dir/tests/MatriculaTest.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/fsoft2026_1DE_3.dir/tests/MatriculaTest.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\HP-XTO\Desktop\fsoft\tests\MatriculaTest.cpp -o CMakeFiles\fsoft2026_1DE_3.dir\tests\MatriculaTest.cpp.s
+
+CMakeFiles/fsoft2026_1DE_3.dir/tests/ServiceTest.cpp.obj: CMakeFiles/fsoft2026_1DE_3.dir/flags.make
+CMakeFiles/fsoft2026_1DE_3.dir/tests/ServiceTest.cpp.obj: CMakeFiles/fsoft2026_1DE_3.dir/includes_CXX.rsp
+CMakeFiles/fsoft2026_1DE_3.dir/tests/ServiceTest.cpp.obj: C:/Users/HP-XTO/Desktop/fsoft/tests/ServiceTest.cpp
+CMakeFiles/fsoft2026_1DE_3.dir/tests/ServiceTest.cpp.obj: CMakeFiles/fsoft2026_1DE_3.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\HP-XTO\Desktop\fsoft\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/fsoft2026_1DE_3.dir/tests/ServiceTest.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fsoft2026_1DE_3.dir/tests/ServiceTest.cpp.obj -MF CMakeFiles\fsoft2026_1DE_3.dir\tests\ServiceTest.cpp.obj.d -o CMakeFiles\fsoft2026_1DE_3.dir\tests\ServiceTest.cpp.obj -c C:\Users\HP-XTO\Desktop\fsoft\tests\ServiceTest.cpp
+
+CMakeFiles/fsoft2026_1DE_3.dir/tests/ServiceTest.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/fsoft2026_1DE_3.dir/tests/ServiceTest.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\HP-XTO\Desktop\fsoft\tests\ServiceTest.cpp > CMakeFiles\fsoft2026_1DE_3.dir\tests\ServiceTest.cpp.i
+
+CMakeFiles/fsoft2026_1DE_3.dir/tests/ServiceTest.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/fsoft2026_1DE_3.dir/tests/ServiceTest.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\HP-XTO\Desktop\fsoft\tests\ServiceTest.cpp -o CMakeFiles\fsoft2026_1DE_3.dir\tests\ServiceTest.cpp.s
+
 # Object files for target fsoft2026_1DE_3
 fsoft2026_1DE_3_OBJECTS = \
 "CMakeFiles/fsoft2026_1DE_3.dir/main.cpp.obj" \
@@ -520,7 +580,11 @@ fsoft2026_1DE_3_OBJECTS = \
 "CMakeFiles/fsoft2026_1DE_3.dir/Sources/exceptions/DuplicatedDataException.cpp.obj" \
 "CMakeFiles/fsoft2026_1DE_3.dir/Sources/exceptions/InvalidDataException.cpp.obj" \
 "CMakeFiles/fsoft2026_1DE_3.dir/Sources/exceptions/NoDataException.cpp.obj" \
-"CMakeFiles/fsoft2026_1DE_3.dir/Sources/exceptions/NotFoundException.cpp.obj"
+"CMakeFiles/fsoft2026_1DE_3.dir/Sources/exceptions/NotFoundException.cpp.obj" \
+"CMakeFiles/fsoft2026_1DE_3.dir/tests/StudentTest.cpp.obj" \
+"CMakeFiles/fsoft2026_1DE_3.dir/tests/TrainingPlanTest.cpp.obj" \
+"CMakeFiles/fsoft2026_1DE_3.dir/tests/MatriculaTest.cpp.obj" \
+"CMakeFiles/fsoft2026_1DE_3.dir/tests/ServiceTest.cpp.obj"
 
 # External object files for target fsoft2026_1DE_3
 fsoft2026_1DE_3_EXTERNAL_OBJECTS =
@@ -553,11 +617,15 @@ fsoft2026_1DE_3.exe: CMakeFiles/fsoft2026_1DE_3.dir/Sources/exceptions/Duplicate
 fsoft2026_1DE_3.exe: CMakeFiles/fsoft2026_1DE_3.dir/Sources/exceptions/InvalidDataException.cpp.obj
 fsoft2026_1DE_3.exe: CMakeFiles/fsoft2026_1DE_3.dir/Sources/exceptions/NoDataException.cpp.obj
 fsoft2026_1DE_3.exe: CMakeFiles/fsoft2026_1DE_3.dir/Sources/exceptions/NotFoundException.cpp.obj
+fsoft2026_1DE_3.exe: CMakeFiles/fsoft2026_1DE_3.dir/tests/StudentTest.cpp.obj
+fsoft2026_1DE_3.exe: CMakeFiles/fsoft2026_1DE_3.dir/tests/TrainingPlanTest.cpp.obj
+fsoft2026_1DE_3.exe: CMakeFiles/fsoft2026_1DE_3.dir/tests/MatriculaTest.cpp.obj
+fsoft2026_1DE_3.exe: CMakeFiles/fsoft2026_1DE_3.dir/tests/ServiceTest.cpp.obj
 fsoft2026_1DE_3.exe: CMakeFiles/fsoft2026_1DE_3.dir/build.make
 fsoft2026_1DE_3.exe: CMakeFiles/fsoft2026_1DE_3.dir/linkLibs.rsp
 fsoft2026_1DE_3.exe: CMakeFiles/fsoft2026_1DE_3.dir/objects1.rsp
 fsoft2026_1DE_3.exe: CMakeFiles/fsoft2026_1DE_3.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\HP-XTO\Desktop\fsoft\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Linking CXX executable fsoft2026_1DE_3.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\HP-XTO\Desktop\fsoft\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Linking CXX executable fsoft2026_1DE_3.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\fsoft2026_1DE_3.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

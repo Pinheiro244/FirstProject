@@ -36,6 +36,10 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/HP-XTO/Desktop/fsoft/Sources/view/utils.cpp" "CMakeFiles/fsoft2026_1DE_3.dir/Sources/view/utils.cpp.obj" "gcc" "CMakeFiles/fsoft2026_1DE_3.dir/Sources/view/utils.cpp.obj.d"
   "C:/Users/HP-XTO/Desktop/fsoft/Sources/view/view.cpp" "CMakeFiles/fsoft2026_1DE_3.dir/Sources/view/view.cpp.obj" "gcc" "CMakeFiles/fsoft2026_1DE_3.dir/Sources/view/view.cpp.obj.d"
   "C:/Users/HP-XTO/Desktop/fsoft/main.cpp" "CMakeFiles/fsoft2026_1DE_3.dir/main.cpp.obj" "gcc" "CMakeFiles/fsoft2026_1DE_3.dir/main.cpp.obj.d"
+  "C:/Users/HP-XTO/Desktop/fsoft/tests/MatriculaTest.cpp" "CMakeFiles/fsoft2026_1DE_3.dir/tests/MatriculaTest.cpp.obj" "gcc" "CMakeFiles/fsoft2026_1DE_3.dir/tests/MatriculaTest.cpp.obj.d"
+  "C:/Users/HP-XTO/Desktop/fsoft/tests/ServiceTest.cpp" "CMakeFiles/fsoft2026_1DE_3.dir/tests/ServiceTest.cpp.obj" "gcc" "CMakeFiles/fsoft2026_1DE_3.dir/tests/ServiceTest.cpp.obj.d"
+  "C:/Users/HP-XTO/Desktop/fsoft/tests/StudentTest.cpp" "CMakeFiles/fsoft2026_1DE_3.dir/tests/StudentTest.cpp.obj" "gcc" "CMakeFiles/fsoft2026_1DE_3.dir/tests/StudentTest.cpp.obj.d"
+  "C:/Users/HP-XTO/Desktop/fsoft/tests/TrainingPlanTest.cpp" "CMakeFiles/fsoft2026_1DE_3.dir/tests/TrainingPlanTest.cpp.obj" "gcc" "CMakeFiles/fsoft2026_1DE_3.dir/tests/TrainingPlanTest.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

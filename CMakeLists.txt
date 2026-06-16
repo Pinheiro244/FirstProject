@@ -52,6 +52,10 @@ add_executable(fsoft2026_1DE_3
         Sources/exceptions/InvalidDataException.cpp
         Sources/exceptions/NoDataException.cpp
         Sources/exceptions/NotFoundException.cpp
+        tests/StudentTest.cpp
+        tests/TrainingPlanTest.cpp
+        tests/MatriculaTest.cpp
+        tests/ServiceTest.cpp
 )
 
 add_executable(ProjectTester
@@ -72,3 +76,50 @@ add_executable(ProjectTester
         Sources/exceptions/NoDataException.cpp
         Sources/exceptions/NotFoundException.cpp
 )
+
+include(FetchContent)
+
+FetchContent_Declare(
+        googletest
+        URL https://github.com/google/googletest/archive/refs/heads/main.zip
+)
+
+FetchContent_MakeAvailable(googletest)
+
+enable_testing()
+
+add_executable(runTests
+        tests/StudentTest.cpp
+        tests/TrainingPlanTest.cpp
+        tests/MatriculaTest.cpp
+        tests/ServiceTest.cpp
+
+        Sources/model/person.cpp
+        Sources/model/student.cpp
+        Sources/model/studentcontainer.cpp
+        Sources/model/trainingplan.cpp
+        Sources/model/trainingplancontainer.cpp
+        Sources/model/Matricula.cpp
+        Sources/model/MatriculaContainer.cpp
+        Sources/model/school.cpp
+
+        Sources/repo/SchoolMemoryRepository.cpp
+
+        Sources/service/StudentService.cpp
+        Sources/service/TrainingPlanService.cpp
+        Sources/service/MatriculaService.cpp
+
+        Sources/mappers/StudentMapper.cpp
+        Sources/mappers/TrainingPlanMapper.cpp
+        Sources/mappers/MatriculaMapper.cpp
+
+        Sources/exceptions/ApplicationException.cpp
+        Sources/exceptions/DataConsistencyException.cpp
+        Sources/exceptions/DuplicatedDataException.cpp
+        Sources/exceptions/InvalidDataException.cpp
+        Sources/exceptions/NotFoundException.cpp
+)
+
+target_link_libraries(runTests gtest gtest_main)
+
+add_test(NAME runTests COMMAND runTests)

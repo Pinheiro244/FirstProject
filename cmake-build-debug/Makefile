@@ -1110,6 +1110,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+mock/MockData.obj: mock/MockData.cpp.obj
+.PHONY : mock/MockData.obj
+
+# target to build an object file
+mock/MockData.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/mock/MockData.cpp.obj
+.PHONY : mock/MockData.cpp.obj
+
+mock/MockData.i: mock/MockData.cpp.i
+.PHONY : mock/MockData.i
+
+# target to preprocess a source file
+mock/MockData.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/mock/MockData.cpp.i
+.PHONY : mock/MockData.cpp.i
+
+mock/MockData.s: mock/MockData.cpp.s
+.PHONY : mock/MockData.s
+
+# target to generate assembly for a file
+mock/MockData.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fsoft2026_1DE_3.dir\build.make CMakeFiles/fsoft2026_1DE_3.dir/mock/MockData.cpp.s
+.PHONY : mock/MockData.cpp.s
+
 tests/MatriculaTest.obj: tests/MatriculaTest.cpp.obj
 .PHONY : tests/MatriculaTest.obj
 
@@ -1319,6 +1343,9 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... mock/MockData.obj
+	@echo ... mock/MockData.i
+	@echo ... mock/MockData.s
 	@echo ... tests/MatriculaTest.obj
 	@echo ... tests/MatriculaTest.i
 	@echo ... tests/MatriculaTest.s

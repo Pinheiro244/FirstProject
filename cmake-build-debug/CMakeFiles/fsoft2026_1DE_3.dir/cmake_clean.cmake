@@ -59,6 +59,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/fsoft2026_1DE_3.dir/Sources/view/view.cpp.obj.d"
   "CMakeFiles/fsoft2026_1DE_3.dir/main.cpp.obj"
   "CMakeFiles/fsoft2026_1DE_3.dir/main.cpp.obj.d"
+  "CMakeFiles/fsoft2026_1DE_3.dir/mock/MockData.cpp.obj"
+  "CMakeFiles/fsoft2026_1DE_3.dir/mock/MockData.cpp.obj.d"
   "fsoft2026_1DE_3.exe"
   "fsoft2026_1DE_3.exe.manifest"
   "fsoft2026_1DE_3.pdb"

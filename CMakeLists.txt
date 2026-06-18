@@ -21,6 +21,8 @@ add_executable(fsoft2026_1DE_3
 
         Sources/controllers/controllers.cpp
 
+        mock/MockData.cpp
+
         Sources/model/person.cpp
         Sources/model/student.cpp
         Sources/model/studentcontainer.cpp
@@ -29,6 +31,7 @@ add_executable(fsoft2026_1DE_3
         Sources/model/Matricula.cpp
         Sources/model/MatriculaContainer.cpp
         Sources/model/school.cpp
+
 
         Sources/service/StudentService.cpp
         Sources/service/TrainingPlanService.cpp

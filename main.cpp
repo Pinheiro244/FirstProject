@@ -11,10 +11,19 @@
 
 #include "headers/controller/controller.h"
 
+#include "mock/MockData.h"
+
 using namespace std;
 
 int main() {
+
     SchoolMemoryRepository repo;
+
+    MockData::load(repo.getModel());
+
+    StudentService studentService(&repo);
+    TrainingPlanService trainingPlanService(&repo);
+    MatriculaService matriculaService(&repo);
 
     School* model = repo.getModel();
     ExerciseContainer& exerciseContainer = model->getExerciseContainer();
@@ -26,9 +35,7 @@ int main() {
     exerciseContainer.add(5, "Footwork", "Movement and positioning exercise");
     exerciseContainer.add(6, "Heavy Bag", "Punching bag training");
 
-    StudentService studentService(&repo);
-    TrainingPlanService trainingPlanService(&repo);
-    MatriculaService matriculaService(&repo);
+
 
     Controller controller(&studentService, &trainingPlanService, &matriculaService);
     controller.run();
